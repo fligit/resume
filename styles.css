@@ -1,0 +1,304 @@
+:root {
+  --accent-1: #ff6ec7;
+  --accent-2: #7873f5;
+  --accent-3: #4ade80;
+  --accent-4: #facc15;
+  --ink: #f8fafc;
+  --muted: #cbd5e1;
+}
+
+.reveal {
+  font-family: "Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+}
+
+html, body, .reveal, .reveal .slides {
+  background: transparent;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 10% 10%, rgba(255, 110, 199, 0.35), transparent 60%),
+    radial-gradient(1000px 700px at 90% 20%, rgba(120, 115, 245, 0.40), transparent 60%),
+    radial-gradient(1100px 700px at 50% 100%, rgba(74, 222, 128, 0.25), transparent 60%),
+    linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0b1120 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  animation: bgshift 24s ease-in-out infinite alternate;
+}
+
+@keyframes bgshift {
+  0%   { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+  100% { background-position: 20% 10%, 80% 30%, 40% 90%, 0 0; }
+}
+
+/* ---- Overflow / scrolling fix ----
+   reveal.js doesn't scroll within a slide by default.
+   We give each section overflow-y: auto and let it scroll when content is taller than the canvas.
+*/
+.reveal .slides > section,
+.reveal .slides > section > section {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 110, 199, 0.5) transparent;
+}
+
+.reveal .slides > section::-webkit-scrollbar {
+  width: 8px;
+}
+.reveal .slides > section::-webkit-scrollbar-thumb {
+  background: rgba(255, 110, 199, 0.4);
+  border-radius: 4px;
+}
+.reveal .slides > section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 110, 199, 0.7);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.reveal h1 {
+  font-size: 3.6em;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hue 8s linear infinite;
+}
+
+@keyframes hue {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.reveal h2 {
+  font-size: 2.2em;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reveal h3 {
+  font-size: 1.4em;
+  color: var(--ink);
+  margin-bottom: 0.4em;
+}
+
+.reveal p, .reveal li {
+  color: var(--muted);
+  font-size: 0.85em;
+  line-height: 1.55;
+}
+
+.reveal strong {
+  color: var(--ink);
+}
+
+.reveal a {
+  color: var(--accent-1);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 110, 199, 0.5);
+}
+
+.reveal section {
+  text-align: left;
+}
+
+.reveal section.center {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: var(--muted);
+  margin-top: -0.4em;
+}
+
+.chip-row {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.2em;
+}
+
+.chip {
+  padding: 0.4em 0.9em;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.55em;
+  color: var(--ink);
+  backdrop-filter: blur(8px);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.card {
+  padding: 1.1em 1.2em;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 110, 199, 0.5);
+}
+
+.card .role {
+  font-size: 0.62em;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.2em;
+}
+
+.card .org {
+  font-size: 0.55em;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.card .when {
+  font-size: 0.45em;
+  color: var(--muted);
+  opacity: 0.8;
+  margin-bottom: 0.6em;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 1em;
+}
+
+.card li {
+  font-size: 0.55em;
+  margin-bottom: 0.3em;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 1.5em;
+  margin-top: 1.5em;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.5em;
+  top: 0.3em;
+  bottom: 0.3em;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-1), var(--accent-2), var(--accent-3));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.1em;
+  padding-left: 1.2em;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -0.25em;
+  top: 0.4em;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background: var(--accent-1);
+  box-shadow: 0 0 0 4px rgba(255, 110, 199, 0.2);
+}
+
+.timeline-item .yr {
+  font-size: 0.5em;
+  color: var(--accent-4);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.timeline-item .ti-role {
+  font-size: 0.7em;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.timeline-item .ti-org {
+  font-size: 0.6em;
+  color: var(--muted);
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.metric {
+  text-align: center;
+  padding: 1.4em 0.5em;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 110, 199, 0.15), rgba(120, 115, 245, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.metric .num {
+  font-size: 1.6em;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-4));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric .lbl {
+  font-size: 0.5em;
+  color: var(--muted);
+  margin-top: 0.3em;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 1.5em;
+  font-size: 0.7em;
+}
+
+.contact span {
+  color: var(--muted);
+}
+
+.reveal .controls {
+  color: var(--accent-1);
+}
+
+.reveal .progress {
+  color: var(--accent-1);
+}
+
+.footer-note {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 0.65em;
+  color: rgba(255, 255, 255, 0.35);
+  z-index: 5;
+}

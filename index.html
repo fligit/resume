@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Fan Li — Self Introduction</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Slides are injected at runtime from slides.json -->
+      </div>
+    </div>
+
+    <div class="footer-note">Fan Li · Self Introduction · Built with reveal.js</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      // Load slide manifest, fetch each HTML fragment, append to .slides, then init Reveal.
+      (async function () {
+        const container = document.querySelector(".reveal .slides");
+        try {
+          const manifest = await fetch("slides.json").then((r) => r.json());
+          for (const path of manifest) {
+            const html = await fetch(path).then((r) => r.text());
+            container.insertAdjacentHTML("beforeend", html);
+          }
+        } catch (err) {
+          container.innerHTML =
+            '<section><h2>Could not load slides</h2>' +
+            '<p>This deck loads each slide via <code>fetch()</code>, which browsers block on <code>file://</code> URLs. ' +
+            'Start a local server first:</p>' +
+            '<pre style="font-size:0.5em;background:rgba(0,0,0,0.3);padding:1em;border-radius:8px;">' +
+            "cd " + window.location.pathname.replace(/\/index\.html$/, "") + "\n" +
+            "python3 -m http.server 8000\n\n" +
+            "# then open http://localhost:8000" +
+            '</pre>' +
+            "<p style=\"font-size:0.6em;opacity:0.7;\">Error: " + err.message + "</p></section>";
+        }
+
+        Reveal.initialize({
+          hash: true,
+          slideNumber: "c/t",
+          controls: true,
+          progress: true,
+          center: false,
+          // Bigger canvas so most content fits without scrolling; individual sections still scroll if needed.
+          width: 1280,
+          height: 800,
+          margin: 0.04,
+          transition: "slide",
+          backgroundTransition: "fade",
+          plugins: [RevealHighlight, RevealNotes],
+        });
+      })();
+    </script>
+  </body>
+</html>

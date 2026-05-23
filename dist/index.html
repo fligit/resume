@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Fan Li — Self Introduction</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" />
+    <style>
+:root {
+  --accent-1: #ff6ec7;
+  --accent-2: #7873f5;
+  --accent-3: #4ade80;
+  --accent-4: #facc15;
+  --ink: #f8fafc;
+  --muted: #cbd5e1;
+}
+
+.reveal {
+  font-family: "Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+}
+
+html, body, .reveal, .reveal .slides {
+  background: transparent;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 10% 10%, rgba(255, 110, 199, 0.35), transparent 60%),
+    radial-gradient(1000px 700px at 90% 20%, rgba(120, 115, 245, 0.40), transparent 60%),
+    radial-gradient(1100px 700px at 50% 100%, rgba(74, 222, 128, 0.25), transparent 60%),
+    linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0b1120 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  animation: bgshift 24s ease-in-out infinite alternate;
+}
+
+@keyframes bgshift {
+  0%   { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+  100% { background-position: 20% 10%, 80% 30%, 40% 90%, 0 0; }
+}
+
+/* ---- Overflow / scrolling fix ----
+   reveal.js doesn't scroll within a slide by default.
+   We give each section overflow-y: auto and let it scroll when content is taller than the canvas.
+*/
+.reveal .slides > section,
+.reveal .slides > section > section {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 110, 199, 0.5) transparent;
+}
+
+.reveal .slides > section::-webkit-scrollbar {
+  width: 8px;
+}
+.reveal .slides > section::-webkit-scrollbar-thumb {
+  background: rgba(255, 110, 199, 0.4);
+  border-radius: 4px;
+}
+.reveal .slides > section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 110, 199, 0.7);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.reveal h1 {
+  font-size: 3.6em;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hue 8s linear infinite;
+}
+
+@keyframes hue {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.reveal h2 {
+  font-size: 2.2em;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reveal h3 {
+  font-size: 1.4em;
+  color: var(--ink);
+  margin-bottom: 0.4em;
+}
+
+.reveal p, .reveal li {
+  color: var(--muted);
+  font-size: 0.85em;
+  line-height: 1.55;
+}
+
+.reveal strong {
+  color: var(--ink);
+}
+
+.reveal a {
+  color: var(--accent-1);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 110, 199, 0.5);
+}
+
+.reveal section {
+  text-align: left;
+}
+
+.reveal section.center {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: var(--muted);
+  margin-top: -0.4em;
+}
+
+.chip-row {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.2em;
+}
+
+.chip {
+  padding: 0.4em 0.9em;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.55em;
+  color: var(--ink);
+  backdrop-filter: blur(8px);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.card {
+  padding: 1.1em 1.2em;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 110, 199, 0.5);
+}
+
+.card .role {
+  font-size: 0.62em;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.2em;
+}
+
+.card .org {
+  font-size: 0.55em;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.card .when {
+  font-size: 0.45em;
+  color: var(--muted);
+  opacity: 0.8;
+  margin-bottom: 0.6em;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 1em;
+}
+
+.card li {
+  font-size: 0.55em;
+  margin-bottom: 0.3em;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 1.5em;
+  margin-top: 1.5em;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.5em;
+  top: 0.3em;
+  bottom: 0.3em;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-1), var(--accent-2), var(--accent-3));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.1em;
+  padding-left: 1.2em;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -0.25em;
+  top: 0.4em;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background: var(--accent-1);
+  box-shadow: 0 0 0 4px rgba(255, 110, 199, 0.2);
+}
+
+.timeline-item .yr {
+  font-size: 0.5em;
+  color: var(--accent-4);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.timeline-item .ti-role {
+  font-size: 0.7em;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.timeline-item .ti-org {
+  font-size: 0.6em;
+  color: var(--muted);
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.metric {
+  text-align: center;
+  padding: 1.4em 0.5em;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 110, 199, 0.15), rgba(120, 115, 245, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.metric .num {
+  font-size: 1.6em;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-4));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric .lbl {
+  font-size: 0.5em;
+  color: var(--muted);
+  margin-top: 0.3em;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 1.5em;
+  font-size: 0.7em;
+}
+
+.contact span {
+  color: var(--muted);
+}
+
+.reveal .controls {
+  color: var(--accent-1);
+}
+
+.reveal .progress {
+  color: var(--accent-1);
+}
+
+.footer-note {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 0.65em;
+  color: rgba(255, 255, 255, 0.35);
+  z-index: 5;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+<section class="center" data-transition="zoom">
+  <h1>Fan Li</h1>
+  <p class="subtitle">Staff Machine Learning Engineer · Autonomy</p>
+  <div class="chip-row">
+    <span class="chip">🚗 Autonomous Driving</span>
+    <span class="chip">🧠 Deep Learning</span>
+    <span class="chip">🛠️ ML Infrastructure</span>
+    <span class="chip">📐 Math + CS</span>
+  </div>
+  <div class="contact">
+    <span>📧 fanli0318@gmail.com</span>
+    <span>📞 +1 (520) 271-2551</span>
+  </div>
+</section>
+
+<section data-transition="slide">
+  <h2>Hello 👋</h2>
+  <p>
+    I'm an ML engineer with a decade of production experience —
+    from <strong>Google</strong> infrastructure and user modeling,
+    to <strong>autonomous driving</strong> perception, prediction, and behavior
+    at <strong>Pony.ai</strong>, <strong>Waymo</strong>, and now <strong>Rivian</strong>.
+  </p>
+  <div class="card-grid">
+    <div class="card">
+      <div class="role">🎯 What I do</div>
+      <ul>
+        <li>Build &amp; ship deep learning models in production</li>
+        <li>Lead transitions to foundational / vision-LLM stacks</li>
+        <li>Design ML infra that scales across teams</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="role">🧰 Tools of the trade</div>
+      <ul>
+        <li>Transformers, CNNs, BEV models, MotionLM</li>
+        <li>Lidar, radar, camera — multi-modal sensing</li>
+        <li>Distributed training, mixed precision, inference opt</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="center" data-transition="convex">
+  <h2>By the numbers</h2>
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="num">10+</div>
+      <div class="lbl">Years shipping production ML &amp; systems</div>
+    </div>
+    <div class="metric">
+      <div class="num">4</div>
+      <div class="lbl">Top-tier autonomy / tech companies</div>
+    </div>
+    <div class="metric">
+      <div class="num">40%</div>
+      <div class="lbl">Memory reduction on Rivian BEV encoder</div>
+    </div>
+    <div class="metric">
+      <div class="num">7</div>
+      <div class="lbl">Teams served by ML infra at Pony.ai</div>
+    </div>
+    <div class="metric">
+      <div class="num">40+</div>
+      <div class="lbl">Production models on that infra</div>
+    </div>
+    <div class="metric">
+      <div class="num">2×</div>
+      <div class="lbl">Faster eval triage at Waymo</div>
+    </div>
+  </div>
+</section>
+
+<section data-transition="slide">
+  <h2>Career timeline</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="yr">MAY 2023 — PRESENT</div>
+      <div class="ti-role">Staff ML Engineer · Behavior, Autonomy</div>
+      <div class="ti-org">Rivian</div>
+    </div>
+    <div class="timeline-item">
+      <div class="yr">JAN 2022 — MAY 2023</div>
+      <div class="ti-role">Senior Software Engineer · Perception</div>
+      <div class="ti-org">Waymo</div>
+    </div>
+    <div class="timeline-item">
+      <div class="yr">MAR 2019 — DEC 2021</div>
+      <div class="ti-role">Senior Software Engineer</div>
+      <div class="ti-org">Pony.ai</div>
+    </div>
+    <div class="timeline-item">
+      <div class="yr">MAR 2016 — FEB 2019</div>
+      <div class="ti-role">Software Engineer</div>
+      <div class="ti-org">Google</div>
+    </div>
+  </div>
+</section>
+
+<section data-transition="slide">
+  <h3>🚙 Rivian — Staff ML Engineer, Behavior</h3>
+  <p class="subtitle" style="font-size: 0.7em;">May 2023 — Present · Managing team of 3</p>
+  <div class="card-grid">
+    <div class="card">
+      <div class="org">Foundational models</div>
+      <ul>
+        <li>Leading the shift of perception to world foundational models, unsupervised pre-training, and vision-LLMs</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">BEV perception</div>
+      <ul>
+        <li><strong>~40% memory reduction</strong> on feature encoder (train + inference)</li>
+        <li>Enabled mixed-precision training across perception</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">Behavior prediction</div>
+      <ul>
+        <li>Built the <strong>first</strong> behavior prediction DL models at Rivian</li>
+        <li>Marginal (Transformer) + joint (Auto-Regressive MotionLM)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">Leadership</div>
+      <ul>
+        <li>People management for a team of 3 engineers</li>
+        <li>Roadmap, hiring, technical direction</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-transition="slide">
+  <h3>🛰️ Waymo — Senior SWE, Perception</h3>
+  <p class="subtitle" style="font-size: 0.7em;">Jan 2022 — May 2023</p>
+  <p>Distinguishing <strong>noise points vs. hard objects</strong> from lidar point clouds — semantic segmentation, object detection, data mining, and auto-labeling.</p>
+  <div class="card-grid">
+    <div class="card">
+      <div class="org">Data mining</div>
+      <ul>
+        <li>Pipelines for niche data — dataset <strong>+50%</strong> in size</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">Dense point cloud model</div>
+      <ul>
+        <li>Trained &amp; released in <strong>all 4 major releases</strong></li>
+        <li><strong>Lead</strong> on 2 of them</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">All-weather eval</div>
+      <ul>
+        <li>Built evaluation system covering all weather conditions</li>
+        <li><strong>2× reduction</strong> of manual triage time</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">Impact</div>
+      <ul>
+        <li>Higher precision on the long tail that matters most for safety</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-transition="slide">
+  <h3>🐎 Pony.ai — Senior Software Engineer</h3>
+  <p class="subtitle" style="font-size: 0.7em;">Mar 2019 — Dec 2021</p>
+  <div class="card-grid">
+    <div class="card">
+      <div class="org">ML Infrastructure</div>
+      <ul>
+        <li>Built &amp; supported company-wide ML infra</li>
+        <li>Used by <strong>7 teams · 40+ models</strong></li>
+        <li>Large-scale data gen, distributed training, runtime opt</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">Perception</div>
+      <ul>
+        <li>3D lidar point cloud — detection, classification, segmentation</li>
+        <li>New model from scratch — <strong>&gt;5% mAP</strong> improvement</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">Prediction</div>
+      <ul>
+        <li>Object trajectory and intention prediction</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">Span</div>
+      <ul>
+        <li>End-to-end across infra, perception, and prediction stacks</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-transition="slide">
+  <h3>🔍 Google — Software Engineer</h3>
+  <p class="subtitle" style="font-size: 0.7em;">Mar 2016 — Feb 2019</p>
+  <div class="card-grid">
+    <div class="card">
+      <div class="org">User Modeling · Proactive (2018–2019)</div>
+      <ul>
+        <li>Processed large-scale user activity timelines</li>
+        <li>Productionalized interest-prediction model</li>
+        <li>Served <strong>3 of top 10</strong> Discover results</li>
+        <li>Built a new stack for proactive 3P content — a first at Google</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="org">Resource Management (2016–2018)</div>
+      <ul>
+        <li>Early-stage member of new internal service</li>
+        <li>Optimized rack configuration for Google's data centers</li>
+        <li>New rack deployment: <strong>1 year → 2 weeks</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-transition="slide">
+  <h2>Education &amp; research</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="role">🎓 UCLA</div>
+      <div class="org">Graduate — Computer &amp; Information Science</div>
+      <ul>
+        <li>AI, Bayesian reasoning, problem solving, game theory</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="role">🎓 Shanghai Jiao Tong University</div>
+      <div class="org">Dual Bachelor — CS, minor in Math</div>
+      <ul>
+        <li>Algorithms, complexity, compilers, OS, networks</li>
+        <li>Linear algebra, discrete math, probability &amp; stats</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="role">📄 Master comprehensive exam · 2015</div>
+      <div class="org">Bayesian Network Structure Learning from Incomplete Data</div>
+      <ul>
+        <li>Combined two SOTA results for tree-structure learning</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="role">📄 DEXA 2014 · First author</div>
+      <div class="org">Efficient R-Tree Indexing on Dual-Port Servers</div>
+      <ul>
+        <li>Distributed indexing for multi-dim queries in DCNs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section data-transition="convex">
+  <h2>What I bring</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="role">🚀 From research to production</div>
+      <ul>
+        <li>Comfortable from paper-reading to on-vehicle deployment</li>
+        <li>Track record of <em>first-of-its-kind</em> models in production</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="role">🔬 Depth across modalities</div>
+      <ul>
+        <li>Camera, lidar, radar</li>
+        <li>Transformers, CNNs, autoregressive models, foundational models</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="role">⚙️ Engineering rigor</div>
+      <ul>
+        <li>ML infra that scales to dozens of models &amp; teams</li>
+        <li>Memory, throughput, mixed precision — performance matters</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="role">🧭 Leadership</div>
+      <ul>
+        <li>Lead engineer on multi-release efforts</li>
+        <li>People manager — currently a team of 3</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="center" data-transition="zoom">
+  <h1>Thank you</h1>
+  <p class="subtitle">Let's build the future of autonomy.</p>
+  <div class="contact">
+    <span>📧 fanli0318@gmail.com</span>
+    <span>📞 +1 (520) 271-2551</span>
+  </div>
+  <div class="chip-row" style="margin-top: 2em;">
+    <span class="chip">Press <strong>S</strong> for speaker notes</span>
+    <span class="chip">Press <strong>F</strong> for fullscreen</span>
+    <span class="chip">Press <strong>ESC</strong> for overview</span>
+  </div>
+</section>
+      </div>
+    </div>
+
+    <div class="footer-note">Fan Li · Self Introduction · Built with reveal.js</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        controls: true,
+        progress: true,
+        center: false,
+        width: 1280,
+        height: 800,
+        margin: 0.04,
+        transition: "slide",
+        backgroundTransition: "fade",
+        plugins: [RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
