@@ -1,0 +1,10 @@
+# Build output — regenerate locally with ./build.sh
+dist/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
