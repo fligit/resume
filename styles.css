@@ -63,7 +63,8 @@ body {
 }
 
 .reveal h1 {
-  font-size: 3.6em;
+  font-size: 4.6em;
+  line-height: 1.0;
   background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
   -webkit-background-clip: text;
   background-clip: text;
@@ -118,6 +119,96 @@ body {
   font-size: 1.1em;
   color: var(--muted);
   margin-top: -0.4em;
+}
+
+/* Title-slide typography */
+.eyebrow {
+  font-size: 0.55em;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent-1);
+  margin-bottom: 1.2em;
+  font-weight: 600;
+}
+
+.title-tagline {
+  font-size: 1.0em;
+  color: var(--ink);
+  margin-top: 0.6em;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.title-role {
+  font-size: 0.55em;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-top: 2em;
+  text-transform: uppercase;
+}
+
+/* Career arc — Google → Pony.ai → Waymo → Rivian */
+.career-arc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  margin: 2em 0 0.6em;
+  font-size: 0.95em;
+  flex-wrap: wrap;
+}
+
+.career-arc .stop {
+  padding: 0.4em 0.9em;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.career-arc .stop.current {
+  background: linear-gradient(135deg, rgba(255, 110, 199, 0.25), rgba(120, 115, 245, 0.25));
+  border-color: rgba(255, 110, 199, 0.6);
+  color: var(--ink);
+}
+
+.career-arc .arrow {
+  color: var(--accent-1);
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.career-arc-years {
+  text-align: center;
+  font-size: 0.55em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.4em;
+}
+
+/* Big-statement slide */
+.statement {
+  font-size: 1.4em;
+  line-height: 1.25;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--ink), var(--muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.6em;
+}
+
+.statement-sub {
+  font-size: 0.85em;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 760px;
 }
 
 .chip-row {
